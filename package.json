@@ -1,0 +1,73 @@
+{
+  "name": "@kiyotd/is",
+  "private": false,
+  "version": "0.0.1",
+  "module": "dist/is.min.mjs",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "author": {
+    "name": "kiyotd",
+    "email": "torigoedesign+kiyotd@gmail.com",
+    "url": "https://x.com/_kiyotd"
+  },
+  "description": "Utility",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiyotd/is.git"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts && tsc --noEmit",
+    "prettier": "prettier --write src/**/*.ts",
+    "dev": "run-p dev:* build:types",
+    "dev:browser": "node esbuild/browser.dev.mjs",
+    "dev:sync": "browser-sync start --server --baseDir './' --startPath './index.html' --files 'demo/*' 'dist/**/*' --port 3010",
+    "build": "npm-run-all build:*",
+    "build:clean": "rimraf dist",
+    "build:browser": "node esbuild/browser.mjs",
+    "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir './dist'",
+    "publish": "npm run build && yarn publish --no-git-tag-version --tag latest && git push origin main && git push origin --tags"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/jest": "^29.5.12",
+    "@types/prettier": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "@typescript-eslint/parser": "^8.6.0",
+    "@typescript-eslint/typescript-estree": "^8.6.0",
+    "babel-eslint": "^10.1.0",
+    "browser-sync": "^3.0.2",
+    "esbuild": "^0.23.1",
+    "eslint": "^9.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "jest": "^29.7.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "ts-jest": "^29.1.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.5.3"
+  },
+  "volta": {
+    "node": "20.17.0"
+  }
+}

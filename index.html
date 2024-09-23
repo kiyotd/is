@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>[Demo] IsScrolled</title>
+  <style>
+    body {
+      height: 200vh;
+      transition: background-color 0.3s;
+    }
+
+    body.is-scrolled {
+      background-color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <p>The is-scrolled class is given to the body when it is scrolled.</p>
+
+  <script type="module">
+    import { IsScrolled } from './dist/is.min.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const isScrolled = new IsScrolled();
+      isScrolled.init();
+    });
+  </script>
+</body>
+</html>
