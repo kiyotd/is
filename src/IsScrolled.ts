@@ -16,7 +16,7 @@ class IsScrolled {
   }
 
   updateClass = (): void => {
-    const target: Element | null = document.querySelector(this.targetSelector);
+    const target = document.querySelector(this.targetSelector);
     if (target) {
       if (window.scrollY >= this.scrollThreshold) {
         target.classList.add(this.className);
@@ -57,7 +57,7 @@ class IsScrolled {
 
   destroy(): void {
     this.pause();
-    const target: Element | null = document.querySelector(this.targetSelector);
+    const target = document.querySelector(this.targetSelector);
     if (target) {
       target.classList.remove(this.className);
     }
