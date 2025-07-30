@@ -32,7 +32,9 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "lint": "eslint src/**/*.ts && tsc --noEmit",
-    "prettier": "prettier --write src/**/*.ts",
+    "prettier": "npm-run-all prettier:*",
+    "prettier:src": "prettier --write src/**/*.ts",
+    "prettier:esbuild": "prettier --write esbuild/**/*.mjs",
     "dev": "run-p dev:* build:types",
     "dev:browser": "node esbuild/browser.dev.mjs",
     "dev:sync": "browser-sync start --server --baseDir './' --startPath './index.html' --files 'demo/*' 'dist/**/*' --port 3010",
@@ -68,6 +70,6 @@
     "typescript": "^5.5.3"
   },
   "volta": {
-    "node": "20.17.0"
+    "node": "22.17.1"
   }
 }
