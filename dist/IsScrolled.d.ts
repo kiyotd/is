@@ -4,7 +4,7 @@ declare class IsScrolled {
     targetSelector: string;
     className: string;
     constructor();
-    updateClass(): void;
+    updateClass: () => void;
     init(arg?: InitProps): void;
     pause(): void;
     resume(): void;
