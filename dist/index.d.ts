@@ -1,3 +1,4 @@
 import { IsScrolled } from "./IsScrolled";
 import { IsScrollTop } from "./IsScrollTop";
-export { IsScrolled, IsScrollTop };
+import { IsScrollUp } from "./IsScrollUp";
+export { IsScrolled, IsScrollTop, IsScrollUp };

@@ -19,7 +19,7 @@
 <body>
   <p>The is-scrolled class is given to the body when it is scrolled.</p>
   <script type="module">
-    import { IsScrolled, IsScrollTop } from './dist/is.min.js';
+    import { IsScrolled, IsScrollTop, IsScrollUp } from './dist/is.min.js';
 
     document.addEventListener('DOMContentLoaded', () => {
       const isScrolled = new IsScrolled();
@@ -33,6 +33,12 @@
       // isScrollTop.targetSelector = 'body';
       // isScrollTop.className = 'is-scroll-top';
       isScrollTop.init();
+
+      const isScrollUp = new IsScrollUp();
+      // isScrollUp.scrollThreshold = 10;
+      // isScrollUp.targetSelector = 'body';
+      // isScrollUp.className = 'is-scroll-up';
+      isScrollUp.init();
     });
   </script>
 </body>
