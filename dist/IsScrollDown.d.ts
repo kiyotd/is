@@ -3,7 +3,7 @@ declare class IsScrollDown {
     scrollThreshold: number;
     targetSelector: string;
     className: string;
-    private lastScrollY;
+    lastScrollY: number;
     constructor();
     updateClass: () => void;
     init(arg?: InitProps): void;

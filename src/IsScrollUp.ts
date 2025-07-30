@@ -4,7 +4,7 @@ class IsScrollUp {
   public scrollThreshold: number;
   public targetSelector: string;
   public className: string;
-  private lastScrollY: number;
+  public lastScrollY: number;
 
   public constructor() {
     this.scrollThreshold = 10;
@@ -45,8 +45,12 @@ class IsScrollUp {
       this.className = arg.className;
     }
 
-    // 初期化時に現在のスクロール位置を設定
-    this.lastScrollY = window.scrollY;
+    if (arg && arg.lastScrollY !== undefined) {
+      this.lastScrollY = arg.lastScrollY;
+    } else {
+      // 初期化時に現在のスクロール位置を設定
+      this.lastScrollY = window.scrollY;
+    }
     this.updateClass();
     window.addEventListener("scroll", this.updateClass);
   }

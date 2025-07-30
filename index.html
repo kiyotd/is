@@ -4,20 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>[Demo]</title>
+  <title>[Demo] @kiyotd/is</title>
   <style>
     body {
       height: 200vh;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
       transition: background-color 0.3s;
     }
 
+    /* スクロール関連のスタイル */
     body.is-scrolled {
       background-color: #ff0000;
     }
   </style>
 </head>
 <body>
-  <p>The is-scrolled class is given to the body when it is scrolled.</p>
+  <h1>@kiyotd/is Demo</h1>
+  <p>スクロールやデバイス判定に応じて、bodyに以下のクラスが付与されます：</p>
+  <ul>
+    <li><strong>is-scrolled</strong> - 一定量スクロールした時</li>
+    <li><strong>is-scroll-top</strong> - ページトップ付近にいる時</li>
+    <li><strong>is-scroll-up</strong> - 上方向にスクロールした時</li>
+    <li><strong>is-scroll-down</strong> - 下方向にスクロールした時</li>
+    <li><strong>is-android / is-iphone / is-ipad / is-pc</strong> - デバイス判定</li>
+    <li><strong>is-chrome / is-firefox / is-safari / is-ie / is-edge</strong> - ブラウザー判定</li>
+  </ul>
+  <p>開発者ツールでbody要素のクラスを確認しながらスクロールしてみてください。</p>
   <script type="module">
     import { IsScrolled, IsScrollTop, IsScrollUp, IsScrollDown, IsDevice } from './dist/is.min.js';
 
@@ -38,6 +52,7 @@
       // isScrollUp.scrollThreshold = 10;
       // isScrollUp.targetSelector = 'body';
       // isScrollUp.className = 'is-scroll-up';
+      // isScrollUp.lastScrollY = 0;
       isScrollUp.init();
 
       const isScrollDown = new IsScrollDown();
