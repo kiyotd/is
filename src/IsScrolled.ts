@@ -15,7 +15,7 @@ class IsScrolled {
     this.className = "is-scrolled";
   }
 
-  updateClass = (): void => {
+  updateClass(): void {
     const target: Element | null = document.querySelector(this.targetSelector);
     if (target) {
       if (window.scrollY >= this.scrollThreshold) {
@@ -26,7 +26,7 @@ class IsScrolled {
     } else {
       console.error(`Element not found: ${this.targetSelector}`);
     }
-  };
+  }
 
   init(arg?: InitProps): void {
     window.removeEventListener("scroll", this.updateClass);
