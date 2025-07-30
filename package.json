@@ -1,8 +1,8 @@
 {
   "name": "@kiyotd/is",
   "private": false,
-  "version": "0.0.1",
-  "module": "dist/is.min.mjs",
+  "version": "0.1.1",
+  "module": "dist/is.min.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
   "author": {

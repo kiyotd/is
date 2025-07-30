@@ -1,39 +1,39 @@
 # @kiyotd/is
 
-フロントエンドでよく使う `is` 系のクラス付与・判定関数を ESモジュールとしてまとめたものです。
+JavaScript utility library for scroll detection and device/browser identification with automatic CSS class management.
 
-## 利用可能なクラス
+## Available Classes
 
-### スクロール関連
+### Scroll Related
 
-- **IsScrolled** - 一定量スクロールすると `is-scrolled` クラスを付与
-- **IsScrollTop** - ページトップ付近で `is-scroll-top` クラスを付与
-- **IsScrollUp** - 上方向にスクロールした時に `is-scroll-up` クラスを付与
-- **IsScrollDown** - 下方向にスクロールした時に `is-scroll-down` クラスを付与
+- **IsScrolled** - Adds `is-scrolled` class when page is scrolled
+- **IsScrollTop** - Adds `is-scroll-top` class when near page top
+- **IsScrollUp** - Adds `is-scroll-up` class when scrolling up
+- **IsScrollDown** - Adds `is-scroll-down` class when scrolling down
 
-### デバイス・ブラウザ判定
+### Device & Browser Detection
 
-- **IsDevice** - デバイスとブラウザーを判定してクラスを付与
-  - デバイス: `is-android`, `is-ipad`, `is-iphone`, `is-pc`
-  - ブラウザー: `is-chrome`, `is-firefox`, `is-safari`, `is-ie`, `is-edge`
+- **IsDevice** - Detects device and browser, adds CSS classes
+  - Device: `is-android`, `is-ipad`, `is-iphone`, `is-pc`
+  - Browser: `is-chrome`, `is-firefox`, `is-safari`, `is-ie`, `is-edge`
 
-## 使用方法
+## How to Use
 
-### NPM から利用する場合
+### Using with NPM
 
-まずインストールします：
+First, install the package:
 
 ```shell
 npm i @kiyotd/is
 ```
 
-または
+or
 
 ```shell
 yarn add @kiyotd/is
 ```
 
-使用例：
+Example usage:
 
 ```javascript
 import { IsScrolled, IsScrollTop, IsScrollUp, IsScrollDown, IsDevice } from "@kiyotd/is";
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-### dist/is.min.js を直接利用する場合
+### Using dist/is.min.js directly
 
 ```html
 <body>
@@ -91,49 +91,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ## API
 
-### 共通メソッド
+### Common Methods
 
 ```javascript
-// 初期化
+// Initialize
 instance.init(options);
 
-// 一時停止
+// Pause
 instance.pause();
 
-// 再開
+// Resume
 instance.resume();
 
-// 完全に削除
+// Destroy completely
 instance.destroy();
 ```
 
-### 設定オプション
+### Configuration Options
 
-#### スクロール位置系クラス（IsScrolled, IsScrollTop）
+You can set options in two ways:
+
+1. **Pass options to `init()` method**:
+
+```javascript
+const isScrolled = new IsScrolled();
+isScrolled.init({
+  scrollThreshold: 20,
+  targetSelector: '.container',
+  className: 'custom-scrolled'
+});
+```
+
+2. **Set properties directly after creating instance**:
+
+```javascript
+const isScrolled = new IsScrolled();
+isScrolled.scrollThreshold = 20;
+isScrolled.targetSelector = '.container';
+isScrolled.className = 'custom-scrolled';
+isScrolled.init();
+```
+
+#### Scroll Position Classes (IsScrolled, IsScrollTop)
 
 ```javascript
 {
-  scrollThreshold: number,  // スクロール閾値（px）
-  targetSelector: string,   // 対象要素のセレクタ
-  className: string         // 付与するクラス名
+  scrollThreshold: number,  // Scroll threshold in pixels
+  targetSelector: string,   // Target element selector
+  className: string         // CSS class name to add
 }
 ```
 
-#### スクロール方向系クラス（IsScrollUp, IsScrollDown）
+#### Scroll Direction Classes (IsScrollUp, IsScrollDown)
 
 ```javascript
 {
-  scrollThreshold: number,  // スクロール閾値（px）
-  targetSelector: string,   // 対象要素のセレクタ
-  className: string,        // 付与するクラス名
-  lastScrollY: number       // 前回のスクロール位置（初期値、省略時は現在位置）
+  scrollThreshold: number,  // Scroll threshold in pixels
+  targetSelector: string,   // Target element selector
+  className: string,        // CSS class name to add
+  lastScrollY: number       // Previous scroll position (default: current position)
 }
 ```
 
-#### デバイス判定クラス（IsDevice）
+#### Device Detection Class (IsDevice)
 
 ```javascript
 {
-  targetSelector: string    // 対象要素のセレクタ
+  targetSelector: string    // Target element selector
 }
 ```
