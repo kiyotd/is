@@ -1,5 +1,6 @@
 import { IsScrolled } from "./IsScrolled";
+import { IsScrollTop } from "./IsScrollTop";
 
-export { IsScrolled };
+export { IsScrolled, IsScrollTop };
 
 // (window as any).IsScrolled = IsScrolled;

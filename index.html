@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>[Demo] IsScrolled</title>
+  <title>[Demo]</title>
   <style>
     body {
       height: 200vh;
@@ -18,13 +18,21 @@
 </head>
 <body>
   <p>The is-scrolled class is given to the body when it is scrolled.</p>
-
   <script type="module">
-    import { IsScrolled } from './dist/is.min.js';
+    import { IsScrolled, IsScrollTop } from './dist/is.min.js';
 
     document.addEventListener('DOMContentLoaded', () => {
       const isScrolled = new IsScrolled();
+      // isScrolled.scrollThreshold = 10;
+      // isScrolled.targetSelector = 'body';
+      // isScrolled.className = 'is-scrolled';
       isScrolled.init();
+
+      const isScrollTop = new IsScrollTop();
+      // isScrollTop.scrollThreshold = 0;
+      // isScrollTop.targetSelector = 'body';
+      // isScrollTop.className = 'is-scroll-top';
+      isScrollTop.init();
     });
   </script>
 </body>
