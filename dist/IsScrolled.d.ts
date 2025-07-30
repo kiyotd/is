@@ -1,14 +1,10 @@
-type InitProps = {
-    scrollThreshold?: number;
-    targetSelector?: string;
-    className?: string;
-};
+import { InitProps } from "./types/InitProps";
 declare class IsScrolled {
     scrollThreshold: number;
     targetSelector: string;
     className: string;
     constructor();
-    updateClass: () => void;
+    updateClass(): void;
     init(arg?: InitProps): void;
     pause(): void;
     resume(): void;

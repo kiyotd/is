@@ -1,8 +1,4 @@
-type InitProps = {
-  scrollThreshold?: number;
-  targetSelector?: string;
-  className?: string;
-};
+import { InitProps } from "./types/InitProps";
 
 class IsScrolled {
   public scrollThreshold: number;
@@ -15,7 +11,7 @@ class IsScrolled {
     this.className = "is-scrolled";
   }
 
-  updateClass = (): void => {
+  updateClass(): void {
     const target: Element | null = document.querySelector(this.targetSelector);
     if (target) {
       if (window.scrollY >= this.scrollThreshold) {
