@@ -1,10 +1,10 @@
-import { IsScrolled } from "../IsScrolled";
-import { IsScrollTop } from "../IsScrollTop";
-import { IsScrollBottom } from "../IsScrollBottom";
-import { IsScrollUp } from "../IsScrollUp";
-import { IsScrollDown } from "../IsScrollDown";
-import { IsBreakpoint } from "../IsBreakpoint";
-import { IsDevice } from "../IsDevice";
+import { IsScrolled } from '../IsScrolled';
+import { IsScrollTop } from '../IsScrollTop';
+import { IsScrollBottom } from '../IsScrollBottom';
+import { IsScrollUp } from '../IsScrollUp';
+import { IsScrollDown } from '../IsScrollDown';
+import { IsBreakpoint } from '../IsBreakpoint';
+import { IsDevice } from '../IsDevice';
 
 interface Window {
   IsScrolled: typeof IsScrolled;

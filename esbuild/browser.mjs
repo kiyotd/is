@@ -25,7 +25,7 @@ await esbuild.build({
   outfile: 'dist/is.umd.min.js',
   globalName: 'IsLibrary',
   define: {
-    'process.env.NODE_ENV': '"production"'
+    'process.env.NODE_ENV': '"production"',
   },
   logLevel: 'info',
 });

@@ -1,11 +1,7 @@
 {
   "name": "@kiyotd/is",
   "private": false,
-  "version": "1.2.2",
-  "main": "dist/is.min.js",
-  "module": "dist/is.min.js",
-  "browser": "dist/is.min.js",
-  "types": "dist/index.d.ts",
+  "version": "1.2.3",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
