@@ -13,7 +13,7 @@ let ctx = await esbuild.build({
   logLevel: 'info',
 });
 
-// UMD形式のビルド（ブラウザ用）
+// IIFE形式のビルド（ブラウザ用）
 await esbuild.build({
   entryPoints: ['src/index.ts'],
   target: 'es2015',
@@ -23,5 +23,9 @@ await esbuild.build({
   minify: true,
   legalComments: 'none',
   outfile: 'dist/is.umd.min.js',
+  globalName: 'IsLibrary',
+  define: {
+    'process.env.NODE_ENV': '"production"'
+  },
   logLevel: 'info',
 });

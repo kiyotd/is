@@ -1,11 +1,18 @@
 {
   "name": "@kiyotd/is",
   "private": false,
-  "version": "1.2.0",
+  "version": "1.2.2",
   "main": "dist/is.min.js",
   "module": "dist/is.min.js",
-  "browser": "dist/is.umd.min.js",
+  "browser": "dist/is.min.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/is.min.js",
+      "require": "./dist/is.umd.min.js"
+    }
+  },
   "license": "MIT",
   "author": {
     "name": "kiyotd",
