@@ -29,6 +29,7 @@
     <li><strong>is-scroll-bottom</strong> - When near the bottom of the page</li>
     <li><strong>is-scroll-up</strong> - When scrolling upward</li>
     <li><strong>is-scroll-down</strong> - When scrolling downward</li>
+    <li><strong>is-bp-sm / is-bp-md / is-bp-lg / is-bp-xl</strong> - Breakpoint detection</li>
     <li><strong>is-android / is-iphone / is-ipad / is-pc</strong> - Device detection</li>
     <li><strong>is-chrome / is-firefox / is-safari / is-ie / is-edge</strong> - Browser detection</li>
   </ul>
@@ -48,7 +49,7 @@
 &lt;/script&gt;</code></pre>
   <p>For browser direct usage example, see <a href="browser.html">browser.html</a>.</p>
   <script type="module">
-    import { IsScrolled, IsScrollTop, IsScrollUp, IsScrollDown, IsScrollBottom, IsDevice } from './dist/is.min.js';
+    import { IsScrolled, IsScrollTop, IsScrollUp, IsScrollDown, IsScrollBottom, IsBreakpoint, IsDevice } from './dist/is.min.js';
 
     document.addEventListener('DOMContentLoaded', () => {
       const isScrolled = new IsScrolled();
@@ -65,6 +66,9 @@
 
       const isScrollDown = new IsScrollDown();
       isScrollDown.init();
+
+      const isBreakpoint = new IsBreakpoint();
+      isBreakpoint.init();
 
       const isDevice = new IsDevice();
       isDevice.init();

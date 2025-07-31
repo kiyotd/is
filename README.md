@@ -17,6 +17,10 @@ JavaScript utility library for scroll detection and device/browser identificatio
 - **IsScrollUp** - Adds `is-scroll-up` class when scrolling up
 - **IsScrollDown** - Adds `is-scroll-down` class when scrolling down
 
+### Responsive Related
+
+- **IsBreakpoint** - Adds breakpoint classes (`is-bp-sm`, `is-bp-md`, `is-bp-lg`, `is-bp-xl`)
+
 ### Device & Browser Detection
 
 - **IsDevice** - Detects device and browser, adds CSS classes
@@ -42,7 +46,7 @@ yarn add @kiyotd/is
 Example usage:
 
 ```javascript
-import { IsScrolled, IsScrollTop, IsScrollBottom, IsScrollUp, IsScrollDown, IsDevice } from "@kiyotd/is";
+import { IsScrolled, IsScrollTop, IsScrollBottom, IsScrollUp, IsScrollDown, IsBreakpoint, IsDevice } from "@kiyotd/is";
 
 document.addEventListener('DOMContentLoaded', () => {
   const isScrolled = new IsScrolled();
@@ -76,6 +80,18 @@ const isScrollBottom = new IsScrollBottom();
   // isScrollDown.className = 'is-scroll-down';
   // isScrollDown.lastScrollY = 0;
   isScrollDown.init();
+
+  const isScrollBottom = new IsScrollBottom();
+  // isScrollBottom.scrollThreshold = 100;
+  // isScrollBottom.targetSelector = 'body';
+  // isScrollBottom.className = 'is-scroll-bottom';
+  isScrollBottom.init();
+
+  const isBreakpoint = new IsBreakpoint();
+  // isBreakpoint.breakpoints = { sm: 640, md: 768, lg: 1024, xl: 1280 };
+  // isBreakpoint.targetSelector = 'body';
+  // isBreakpoint.prefix = 'is-bp';
+  isBreakpoint.init();
 
   const isDevice = new IsDevice();
   // isDevice.targetSelector = 'body';
@@ -179,6 +195,26 @@ isScrolled.init();
   targetSelector: string,   // Target element selector
   className: string,        // CSS class name to add
   lastScrollY: number       // Previous scroll position (default: current position)
+}
+```
+
+#### Scroll Bottom Class (IsScrollBottom)
+
+```javascript
+{
+  scrollThreshold: number,  // Scroll threshold in pixels from bottom
+  targetSelector: string,   // Target element selector
+  className: string         // CSS class name to add
+}
+```
+
+#### Breakpoint Detection Class (IsBreakpoint)
+
+```javascript
+{
+  breakpoints: object,      // Breakpoint definitions { sm: 640, md: 768, lg: 1024, xl: 1280 }
+  targetSelector: string,   // Target element selector
+  prefix: string           // CSS class prefix (default: 'is-bp')
 }
 ```
 
