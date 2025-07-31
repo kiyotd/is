@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -14,7 +14,7 @@
       transition: background-color 0.3s;
     }
 
-    /* スクロール関連のスタイル */
+    /* Scroll-related styles */
     body.is-scrolled {
       background-color: #ff0000;
     }
@@ -22,23 +22,23 @@
 </head>
 <body>
   <h1>@kiyotd/is Browser Demo</h1>
-  <p>ブラウザでの直接利用例（UMD形式）</p>
-  <p>スクロールやデバイス判定に応じて、bodyに以下のクラスが付与されます：</p>
+  <p>Browser direct usage example (UMD format)</p>
+  <p>The following classes will be added to the body element based on scroll and device detection:</p>
   <ul>
-    <li><strong>is-scrolled</strong> - 一定量スクロールした時</li>
-    <li><strong>is-scroll-top</strong> - ページトップ付近にいる時</li>
-    <li><strong>is-scroll-up</strong> - 上方向にスクロールした時</li>
-    <li><strong>is-scroll-down</strong> - 下方向にスクロールした時</li>
-    <li><strong>is-android / is-iphone / is-ipad / is-pc</strong> - デバイス判定</li>
-    <li><strong>is-chrome / is-firefox / is-safari / is-ie / is-edge</strong> - ブラウザー判定</li>
+    <li><strong>is-scrolled</strong> - When scrolled a certain amount</li>
+    <li><strong>is-scroll-top</strong> - When near the top of the page</li>
+    <li><strong>is-scroll-up</strong> - When scrolling upward</li>
+    <li><strong>is-scroll-down</strong> - When scrolling downward</li>
+    <li><strong>is-android / is-iphone / is-ipad / is-pc</strong> - Device detection</li>
+    <li><strong>is-chrome / is-firefox / is-safari / is-ie / is-edge</strong> - Browser detection</li>
   </ul>
-  <p>開発者ツールでbody要素のクラスを確認しながらスクロールしてみてください。</p>
-  <h2>利用方法</h2>
-  <p>以下のようにUMDファイルを読み込んで利用できます：</p>
+  <p>Check the body element classes in the developer tools while scrolling.</p>
+  <h2>Usage</h2>
+  <p>You can use it by loading the UMD file as follows:</p>
   <pre><code>&lt;script src="dist/is.umd.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
   document.addEventListener('DOMContentLoaded', () => {
-    // 直接グローバルオブジェクトとして利用
+    // Use as direct global objects
     const isScrolled = new IsScrolled();
     isScrolled.init();
 
@@ -46,7 +46,7 @@
     isDevice.init();
   });
 &lt;/script&gt;</code></pre>
-  <!-- UMD形式での利用例 -->
+  <!-- UMD format usage example -->
   <script src="dist/is.umd.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {

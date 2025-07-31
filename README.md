@@ -2,6 +2,11 @@
 
 JavaScript utility library for scroll detection and device/browser identification with automatic CSS class management.
 
+## Demo
+
+- [ESM Demo](https://prjtest.com/@kiyotd/is/) - dist/is.min.js
+- [UMD Demo](https://prjtest.com/@kiyotd/is/browser.html) - dist/is.umd.min.js
+
 ## Available Classes
 
 ### Scroll Related
