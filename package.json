@@ -52,7 +52,7 @@
     "build:clean": "rimraf dist",
     "build:browser": "node esbuild/browser.mjs",
     "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir './dist'",
-    "publish": "npm run build && yarn publish --no-git-tag-version --tag latest && git push origin main && git push origin --tags"
+    "publish": "yarn publish --no-git-tag-version --tag latest"
   },
   "devDependencies": {
     "rimraf": "^6.0.1",
