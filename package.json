@@ -1,8 +1,10 @@
 {
   "name": "@kiyotd/is",
   "private": false,
-  "version": "0.1.1",
+  "version": "1.0.0",
+  "main": "dist/is.min.js",
   "module": "dist/is.min.js",
+  "browser": "dist/is.umd.min.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
   "author": {
@@ -38,6 +40,7 @@
     "dev": "run-p dev:* build:types",
     "dev:browser": "node esbuild/browser.dev.mjs",
     "dev:sync": "browser-sync start --server --baseDir './' --startPath './index.html' --files 'demo/*' 'dist/**/*' --port 3010",
+    "dev:browser-demo": "browser-sync start --server --baseDir './' --startPath './browser.html' --files 'dist/**/*' --port 3011",
     "build": "npm-run-all build:*",
     "build:clean": "rimraf dist",
     "build:browser": "node esbuild/browser.mjs",

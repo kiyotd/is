@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>[Demo] @kiyotd/is</title>
+  <title>[Browser Demo] @kiyotd/is</title>
   <style>
     body {
       height: 200vh;
@@ -21,7 +21,8 @@
   </style>
 </head>
 <body>
-  <h1>@kiyotd/is Demo</h1>
+  <h1>@kiyotd/is Browser Demo</h1>
+  <p>ブラウザでの直接利用例（UMD形式）</p>
   <p>スクロールやデバイス判定に応じて、bodyに以下のクラスが付与されます：</p>
   <ul>
     <li><strong>is-scrolled</strong> - 一定量スクロールした時</li>
@@ -33,11 +34,11 @@
   </ul>
   <p>開発者ツールでbody要素のクラスを確認しながらスクロールしてみてください。</p>
   <h2>利用方法</h2>
-  <p>ESM形式での利用例（npm経由または直接読み込み）</p>
-  <pre><code>&lt;script type="module"&gt;
-  import { IsScrolled, IsDevice } from './dist/is.min.js';
-
+  <p>以下のようにUMDファイルを読み込んで利用できます：</p>
+  <pre><code>&lt;script src="dist/is.umd.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
   document.addEventListener('DOMContentLoaded', () => {
+    // 直接グローバルオブジェクトとして利用
     const isScrolled = new IsScrolled();
     isScrolled.init();
 
@@ -45,10 +46,9 @@
     isDevice.init();
   });
 &lt;/script&gt;</code></pre>
-  <p>ブラウザでの直接利用例は <a href="browser.html">browser.html</a> をご覧ください。</p>
-  <script type="module">
-    import { IsScrolled, IsScrollTop, IsScrollUp, IsScrollDown, IsDevice } from './dist/is.min.js';
-
+  <!-- UMD形式での利用例 -->
+  <script src="dist/is.umd.min.js"></script>
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
       const isScrolled = new IsScrolled();
       isScrolled.init();

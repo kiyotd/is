@@ -6,4 +6,12 @@ import { IsDevice } from "./IsDevice";
 
 export { IsScrolled, IsScrollTop, IsScrollUp, IsScrollDown, IsDevice };
 
-// (window as any).IsScrolled = IsScrolled;
+// ブラウザ環境でグローバルに公開
+if (typeof window !== 'undefined') {
+  // 各クラスを直接グローバルに公開
+  (window as any).IsScrolled = IsScrolled;
+  (window as any).IsScrollTop = IsScrollTop;
+  (window as any).IsScrollUp = IsScrollUp;
+  (window as any).IsScrollDown = IsScrollDown;
+  (window as any).IsDevice = IsDevice;
+}

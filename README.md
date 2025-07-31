@@ -71,13 +71,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-### Using dist/is.min.js directly
+### Using dist/is.min.js directly (ESM)
 
 ```html
 <body>
   <script type="module">
     import { IsScrolled, IsDevice } from './dist/is.min.js';
 
+    document.addEventListener('DOMContentLoaded', () => {
+      const isScrolled = new IsScrolled();
+      isScrolled.init();
+
+      const isDevice = new IsDevice();
+      isDevice.init();
+    });
+  </script>
+</body>
+```
+
+### Using dist/is.umd.min.js directly (UMD)
+
+```html
+<body>
+  <script src="dist/is.umd.min.js"></script>
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
       const isScrolled = new IsScrolled();
       isScrolled.init();
