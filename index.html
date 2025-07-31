@@ -26,6 +26,7 @@
   <ul>
     <li><strong>is-scrolled</strong> - When scrolled a certain amount</li>
     <li><strong>is-scroll-top</strong> - When near the top of the page</li>
+    <li><strong>is-scroll-bottom</strong> - When near the bottom of the page</li>
     <li><strong>is-scroll-up</strong> - When scrolling upward</li>
     <li><strong>is-scroll-down</strong> - When scrolling downward</li>
     <li><strong>is-android / is-iphone / is-ipad / is-pc</strong> - Device detection</li>
@@ -47,7 +48,7 @@
 &lt;/script&gt;</code></pre>
   <p>For browser direct usage example, see <a href="browser.html">browser.html</a>.</p>
   <script type="module">
-    import { IsScrolled, IsScrollTop, IsScrollUp, IsScrollDown, IsDevice } from './dist/is.min.js';
+    import { IsScrolled, IsScrollTop, IsScrollUp, IsScrollDown, IsScrollBottom, IsDevice } from './dist/is.min.js';
 
     document.addEventListener('DOMContentLoaded', () => {
       const isScrolled = new IsScrolled();
@@ -55,6 +56,9 @@
 
       const isScrollTop = new IsScrollTop();
       isScrollTop.init();
+
+      const isScrollBottom = new IsScrollBottom();
+      isScrollBottom.init();
 
       const isScrollUp = new IsScrollUp();
       isScrollUp.init();

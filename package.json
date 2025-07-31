@@ -1,7 +1,7 @@
 {
   "name": "@kiyotd/is",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/is.min.js",
   "module": "dist/is.min.js",
   "browser": "dist/is.umd.min.js",

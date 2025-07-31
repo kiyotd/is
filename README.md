@@ -13,6 +13,7 @@ JavaScript utility library for scroll detection and device/browser identificatio
 
 - **IsScrolled** - Adds `is-scrolled` class when page is scrolled
 - **IsScrollTop** - Adds `is-scroll-top` class when near page top
+- **IsScrollBottom** - Adds `is-scroll-bottom` class when near page bottom
 - **IsScrollUp** - Adds `is-scroll-up` class when scrolling up
 - **IsScrollDown** - Adds `is-scroll-down` class when scrolling down
 
@@ -41,7 +42,7 @@ yarn add @kiyotd/is
 Example usage:
 
 ```javascript
-import { IsScrolled, IsScrollTop, IsScrollUp, IsScrollDown, IsDevice } from "@kiyotd/is";
+import { IsScrolled, IsScrollTop, IsScrollBottom, IsScrollUp, IsScrollDown, IsDevice } from "@kiyotd/is";
 
 document.addEventListener('DOMContentLoaded', () => {
   const isScrolled = new IsScrolled();
@@ -55,6 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // isScrollTop.targetSelector = 'body';
   // isScrollTop.className = 'is-scroll-top';
   isScrollTop.init();
+
+const isScrollBottom = new IsScrollBottom();
+  // isScrollBottom.scrollThreshold = 100;
+  // isScrollBottom.targetSelector = 'body';
+  // isScrollBottom.className = 'is-scroll-bottom';
+  isScrollBottom.init();
 
   const isScrollUp = new IsScrollUp();
   // isScrollUp.scrollThreshold = 10;

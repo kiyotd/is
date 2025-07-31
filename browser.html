@@ -27,6 +27,7 @@
   <ul>
     <li><strong>is-scrolled</strong> - When scrolled a certain amount</li>
     <li><strong>is-scroll-top</strong> - When near the top of the page</li>
+    <li><strong>is-scroll-bottom</strong> - When near the bottom of the page</li>
     <li><strong>is-scroll-up</strong> - When scrolling upward</li>
     <li><strong>is-scroll-down</strong> - When scrolling downward</li>
     <li><strong>is-android / is-iphone / is-ipad / is-pc</strong> - Device detection</li>
@@ -55,6 +56,10 @@
 
       const isScrollTop = new IsScrollTop();
       isScrollTop.init();
+
+      const isScrollBottom = new IsScrollBottom();
+      isScrollBottom.scrollThreshold = 100;
+      isScrollBottom.init();
 
       const isScrollUp = new IsScrollUp();
       isScrollUp.init();
