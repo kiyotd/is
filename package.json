@@ -45,13 +45,12 @@
     "dev:sync": "browser-sync start --server --baseDir './' --startPath './index.html' --files 'demo/*' 'dist/**/*' --port 3010",
     "dev:browser-demo": "browser-sync start --server --baseDir './' --startPath './browser.html' --files 'dist/**/*' --port 3011",
     "build": "npm-run-all build:*",
-    "build:clean": "rimraf dist",
+    "build:clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\"",
     "build:browser": "node esbuild/browser.mjs",
     "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir './dist'",
     "publish": "yarn publish --no-git-tag-version --tag latest"
   },
   "devDependencies": {
-    "rimraf": "^6.0.1",
     "typescript": "^5.5.3"
   },
   "dependencies": {
