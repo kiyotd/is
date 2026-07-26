@@ -1,0 +1,15 @@
+diff --git a/dist/commonjs/index.js b/dist/commonjs/index.js
+index be9df86be09c7655787a65c55ae6da01858894c3..809b8d625e7dd0b4284ebad029d19a6a548794aa 100644
+--- a/dist/commonjs/index.js
++++ b/dist/commonjs/index.js
+@@ -261,3 +261,10 @@ function expand_(str, max, maxLength, isTop) {
+     return acc;
+ }
+ //# sourceMappingURL=index.js.map
++// v1/v2互換シム: require('brace-expansion') を関数として直接呼べるようにする
++// （minimatch@3 は default 関数、minimatch@9 は __importDefault 経由で利用するため）
++module.exports = expand;
++module.exports.expand = expand;
++module.exports.default = expand;
++module.exports.EXPANSION_MAX = exports.EXPANSION_MAX;
++module.exports.EXPANSION_MAX_LENGTH = exports.EXPANSION_MAX_LENGTH;
