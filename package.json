@@ -51,6 +51,8 @@
     "publish": "yarn publish --no-git-tag-version --tag latest"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "globals": "^17.9.0",
     "typescript": "^5.5.3"
   },
   "dependencies": {
