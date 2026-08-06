@@ -1,5 +1,13 @@
 import { IsDeviceInitProps } from "./types/IsDeviceInitProps";
 
+/**
+ * MSStream は IE11 / Edge Mobile だけが定義していた非標準プロパティ。
+ * UA に iPad / iPhone を含む IE 系を iOS 判定から除外する定番イディオムで参照する。
+ * 値そのものは使わず存在判定にしか用いないため unknown とする。
+ * グローバルの Window を汚さないよう、このモジュール内に閉じた型として定義する。
+ */
+type WindowWithMSStream = Window & { MSStream?: unknown };
+
 class IsDevice {
   public targetSelector: string;
 
@@ -23,13 +31,13 @@ class IsDevice {
       target.classList.remove("is-android");
     }
 
-    if (/iPad/.test(userAgent) && !(window as any).MSStream) {
+    if (/iPad/.test(userAgent) && !(window as WindowWithMSStream).MSStream) {
       target.classList.add("is-ipad");
     } else {
       target.classList.remove("is-ipad");
     }
 
-    if (/iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
+    if (/iPhone|iPod/.test(userAgent) && !(window as WindowWithMSStream).MSStream) {
       target.classList.add("is-iphone");
     } else {
       target.classList.remove("is-iphone");

@@ -1,21 +1,21 @@
-import { IsScrolled } from "./IsScrolled";
-import { IsScrollTop } from "./IsScrollTop";
-import { IsScrollBottom } from "./IsScrollBottom";
-import { IsScrollUp } from "./IsScrollUp";
-import { IsScrollDown } from "./IsScrollDown";
 import { IsBreakpoint } from "./IsBreakpoint";
 import { IsDevice } from "./IsDevice";
+import { IsScrollBottom } from "./IsScrollBottom";
+import { IsScrollDown } from "./IsScrollDown";
+import { IsScrolled } from "./IsScrolled";
+import { IsScrollTop } from "./IsScrollTop";
+import { IsScrollUp } from "./IsScrollUp";
 
 // ESモジュールとしてエクスポート
-export { IsScrolled, IsScrollTop, IsScrollBottom, IsScrollUp, IsScrollDown, IsBreakpoint, IsDevice };
+export { IsBreakpoint, IsDevice, IsScrollBottom, IsScrollDown, IsScrolled, IsScrollTop, IsScrollUp };
 
 // ブラウザ環境でのみグローバルに公開
 if (typeof window !== 'undefined') {
-  (window as any).IsScrolled = IsScrolled;
-  (window as any).IsScrollTop = IsScrollTop;
-  (window as any).IsScrollBottom = IsScrollBottom;
-  (window as any).IsScrollUp = IsScrollUp;
-  (window as any).IsScrollDown = IsScrollDown;
-  (window as any).IsBreakpoint = IsBreakpoint;
-  (window as any).IsDevice = IsDevice;
+  window.IsScrolled = IsScrolled;
+  window.IsScrollTop = IsScrollTop;
+  window.IsScrollBottom = IsScrollBottom;
+  window.IsScrollUp = IsScrollUp;
+  window.IsScrollDown = IsScrollDown;
+  window.IsBreakpoint = IsBreakpoint;
+  window.IsDevice = IsDevice;
 }
